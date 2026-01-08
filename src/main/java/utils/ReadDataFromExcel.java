@@ -2,6 +2,8 @@ package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
+
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -23,6 +25,7 @@ public class ReadDataFromExcel {
         for (int r = 0; r < totalRows; r++) {
             for (int c = 0; c < totalCols; c++) {
                 data[r][c] = df.formatCellValue(sheet.getRow(r + 1).getCell(c));
+                System.out.println(Arrays.toString((long[]) data[r][c]));
             }
         }
 
